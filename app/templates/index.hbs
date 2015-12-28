@@ -1,0 +1,9 @@
+<aside>
+  {{#create-new-post post=model.post createPost="createPost"}}{{/create-new-post}}
+</aside>
+
+<section class="container">
+  {{#each model.data as |post|}}
+    {{blog-post post=post}}
+  {{/each}}
+</section>
