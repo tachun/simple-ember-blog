@@ -1,9 +1,12 @@
-<aside>
-  {{#create-new-post post=model.post createPost="createPost"}}{{/create-new-post}}
-</aside>
+{{#link-to 'posts'}}Show posts{{/link-to}}
+{{#link-to 'createPost'}}Create new post{{/link-to}}
 
 <section class="container">
-  {{#each model.data as |post|}}
-    {{blog-post post=post}}
+  {{#each model.allPosts as |post|}}
+    <h3>{{post.title}}</h3>
+    <p>{{post.text}}</p>
+    <p>
+      <small>posted at {{post.createdDate}} by <em>{{post.author}}</em></small>
+    </p>
   {{/each}}
 </section>
